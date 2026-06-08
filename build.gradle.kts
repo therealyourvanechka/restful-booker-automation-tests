@@ -19,7 +19,7 @@ repositories {
 allure {
     version = "2.42.0"
     report {
-        reportDir.set(layout.projectDirectory)
+        reportDir.set(layout.buildDirectory.dir("allure-report"))
     }
 }
 
@@ -82,6 +82,6 @@ tasks.named("allureReport") {
 tasks.allureReport {
     clean.set(true)
     doFirst {
-        delete("allureReport")
+        delete(layout.buildDirectory.dir("allure-report"))
     }
 }
