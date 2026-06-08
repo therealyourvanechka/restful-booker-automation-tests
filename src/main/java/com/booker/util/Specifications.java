@@ -12,10 +12,6 @@ public class Specifications {
             .setBaseUri(Config.get("BASE_URL"))
             .setContentType(ContentType.JSON)
             .addHeader("Accept", "application/json")
-            .log(LogDetail.URI)
-            .log(LogDetail.METHOD)
-            .log(LogDetail.BODY)
-            .build()
-            .log().ifValidationFails();
+            .build();
     }
 }

@@ -31,8 +31,7 @@ public abstract class BaseTest {
                                 .registerModule(new JavaTimeModule())
                                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)));
         RestAssured.filters(
-                new AllureRestAssured(),
-                new ResponseLoggingFilter(LogDetail.ALL)
+                new AllureRestAssured()
         );
 
         authClient = new AuthClient();
