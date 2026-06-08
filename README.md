@@ -1,5 +1,7 @@
 # restful-booker-automation-tests
 
+[![Tests](https://github.com/therealyourvanechka/restful-booker-automation-tests/actions/workflows/test.yml/badge.svg)](https://github.com/therealyourvanechka/restful-booker-automation-tests/actions/workflows/test.yml)
+
 Проект написан, чтобы отработать на практике слоистую архитектуру автотестов и закрепить навыки работы с REST Assured и Java
 
 **Цель**: не просто покрыть эндпоинты тестами, а выстроить структуру которую легко читать, поддерживать и расширять — как это делается в реальных командах
@@ -181,17 +183,19 @@ AUTH_PASSWORD=password \
 ./gradlew test
 ```
 
-HTML-отчёт сохраняется в папку `allureReport/`. Откройте `allureReport/index.html` в браузере:
+HTML-отчёт сохраняется в папку `build/allure-report/`. Откройте `build/allure-report/index.html` в браузере:
 
 ```bash
-open allureReport/index.html
+open build/allure-report/index.html
 ```
 
 Или через Allure CLI:
 
 ```bash
-allure serve allureReport
+allure serve build/allure-report
 ```
+
+Allure-отчёт на GitHub Pages: https://therealyourvanechka.github.io/restful-booker-automation-tests
 
 ## Конфигурация
 
