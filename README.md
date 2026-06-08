@@ -2,6 +2,8 @@
 
 [![Tests](https://github.com/therealyourvanechka/restful-booker-automation-tests/actions/workflows/test.yml/badge.svg)](https://github.com/therealyourvanechka/restful-booker-automation-tests/actions/workflows/test.yml)
 
+Allure-отчёт на GitHub Pages: https://therealyourvanechka.github.io/restful-booker-automation-tests
+
 Проект написан, чтобы отработать на практике слоистую архитектуру автотестов и закрепить навыки работы с REST Assured и Java
 
 **Цель**: не просто покрыть эндпоинты тестами, а выстроить структуру которую легко читать, поддерживать и расширять — как это делается в реальных командах
