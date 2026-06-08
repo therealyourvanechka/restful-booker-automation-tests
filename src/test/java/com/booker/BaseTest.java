@@ -11,8 +11,6 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.config.ObjectMapperConfig;
 import io.restassured.config.RestAssuredConfig;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import org.junit.jupiter.api.BeforeAll;
 
 public abstract class BaseTest {
