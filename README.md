@@ -175,9 +175,22 @@ AUTH_PASSWORD=password \
 
 ### Allure-отчёт
 
+Отчёт генерируется автоматически после запуска тестов:
+
 ```bash
 ./gradlew test
-allure serve allure-report
+```
+
+HTML-отчёт сохраняется в папку `allureReport/`. Откройте `allureReport/index.html` в браузере:
+
+```bash
+open allureReport/index.html
+```
+
+Или через Allure CLI:
+
+```bash
+allure serve allureReport
 ```
 
 ## Конфигурация
