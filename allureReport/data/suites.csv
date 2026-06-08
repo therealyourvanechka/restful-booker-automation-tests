@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1","AuthControllerTest","","2026-06-08","broken","2026-06-08","","com.booker.controllers.AuthControllerTest","com.booker.controllers.AuthControllerTest",""
+"","0","HealthCheckControllerTest","","2026-06-08","broken","2026-06-08","","com.booker.controllers.HealthCheckControllerTest","com.booker.controllers.HealthCheckControllerTest",""
+"","0","BookingControllerTest","","2026-06-08","broken","2026-06-08","","com.booker.controllers.BookingControllerTest","com.booker.controllers.BookingControllerTest",""
