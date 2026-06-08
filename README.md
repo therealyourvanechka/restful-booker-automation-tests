@@ -183,16 +183,16 @@ AUTH_PASSWORD=password \
 ./gradlew test
 ```
 
-HTML-отчёт сохраняется в папку `build/allure-report/`. Откройте `build/allure-report/index.html` в браузере:
+HTML-отчёт сохраняется в папку `build/allureReport/`. Откройте `build/allureReport/index.html` в браузере:
 
 ```bash
-open build/allure-report/index.html
+open build/allureReport/index.html
 ```
 
 Или через Allure CLI:
 
 ```bash
-allure serve build/allure-report
+allure serve build/allureReport
 ```
 
 Allure-отчёт на GitHub Pages: https://therealyourvanechka.github.io/restful-booker-automation-tests
