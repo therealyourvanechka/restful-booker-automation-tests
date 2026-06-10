@@ -70,7 +70,6 @@ tasks.register("generateAllureEnvironment") {
 tasks.test {
     useJUnitPlatform()
     finalizedBy("generateAllureEnvironment")
-    finalizedBy("allureReport")
     doFirst {
         delete("build/allure-results")
     }
