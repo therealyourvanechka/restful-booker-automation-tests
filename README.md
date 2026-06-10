@@ -27,6 +27,7 @@ Allure-отчёт на GitHub Pages: https://therealyourvanechka.github.io/restf
 | Lombok | 1.18.36 | Снижение boilerplate-кода в моделях |
 | dotenv-java | 3.1.0 | Загрузка конфигурации из .env файла |
 | Gradle | 9.0.0 | Сборщик проекта |
+| GitHub Actions | — | CI/CD: сборка, тесты, публикация Allure-отчёта |
 
 ## Архитектура
 
@@ -57,7 +58,14 @@ src/
     └── controllers/              # Тест-контроллеры по эндпоинтам
         ├── HealthCheckControllerTest.java
         ├── AuthControllerTest.java
-        └── BookingControllerTest.java
+        └── booking/              # Разбиты по эндпоинтам
+            ├── BaseBookingControllerTest.java
+            ├── PostBookingControllerTest.java
+            ├── GetBookingControllerTest.java
+            ├── GetBookingByIdControllerTest.java
+            ├── PutBookingControllerTest.java
+            ├── PatchBookingControllerTest.java
+            └── DeleteBookingControllerTest.java
 ```
 
 **Client-слой** инкапсулирует всю HTTP-логику: каждый эндпоинт представлен двумя методами: типизированным для позитивных сценариев, где нужен десериализованный объект, и raw — для негативных где важен статус-код и тело ответа
@@ -68,8 +76,22 @@ src/
 
 **BookingDataFactory** отвечает за генерацию тестовых данных, используется `DataFaker`, возвращает builder для гибкой кастомизации данных в тестах
 
+**Booking-контроллеры** разбиты по эндпоинтам: каждый HTTP-метод (`POST`, `GET`, `PUT`, `PATCH`, `DELETE`) — в отдельном классе в пакете `controllers/booking/`
+
 **`@Disabled` вместо удаления тестов с багами**: баги API не удаляются — они документируются, каждый `@Disabled`-тест содержит описание ожидаемого и фактического поведения
 
+## CI/CD
+
+**GitHub Actions** (`.github/workflows/test.yml`):
+
+| Стадия | Что делает |
+|--------|------------|
+| `build` | Компиляция Java-кода |
+| `test` | Запуск тестов, генерация Allure-отчёта с историей прогонов, публикация на GitHub Pages |
+
+Триггеры: `push` и `pull_request` в ветку `main`
+
+Allure-отчёт автоматически обновляется после каждого запуска тестов
 
 ## Тесты
 
