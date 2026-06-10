@@ -51,6 +51,7 @@ jobs:
           AUTH_PASSWORD: ${{ secrets.AUTH_PASSWORD }}
 
       - name: Copy Allure history
+        if: always()
         run: |
           mkdir -p build/allure-results/history
           if [ -d "allure-history/history" ]; then
@@ -58,6 +59,7 @@ jobs:
           fi
 
       - name: Generate Allure report (with history)
+        if: always()
         run: ./gradlew allureReport
 
       - name: Deploy Allure report to GitHub Pages
