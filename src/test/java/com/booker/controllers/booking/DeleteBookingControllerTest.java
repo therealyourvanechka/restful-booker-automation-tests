@@ -45,7 +45,7 @@ class DeleteBookingControllerTest extends BaseBookingControllerTest {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.SC_FORBIDDEN);
     }
 
-    @Disabled("Баг API: вместо 404 возвращает 405")
+    // @Disabled("Баг API: вместо 404 возвращает 405")
     @Test
     @Tag("negative")
     @Story("Удаление брони")
