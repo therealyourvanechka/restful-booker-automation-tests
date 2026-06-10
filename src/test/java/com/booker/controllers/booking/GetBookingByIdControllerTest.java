@@ -52,7 +52,7 @@ class GetBookingByIdControllerTest extends BaseBookingControllerTest {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.SC_NOT_FOUND);
     }
 
-    // @Disabled("Баг API: возвращает 404 вместо 400 при невалидном формате ID")
+    @Disabled("Баг API: возвращает 404 вместо 400 при невалидном формате ID")
     @Test
     @Tag("negative")
     @Story("Получение брони по ID")

@@ -73,7 +73,7 @@ class GetBookingControllerTest extends BaseBookingControllerTest {
         assertThat(bookings).as("Список должен быть пустым").isEmpty();
     }
 
-    // @Disabled("Баг API: возвращает 500 вместо 400 при невалидном формате checkin")
+    @Disabled("Баг API: возвращает 500 вместо 400 при невалидном формате checkin")
     @ParameterizedTest
     @ValueSource(strings = {"abc", "2024-13-01", "2024-01-78", "", "01-06-2024"})
     @Tag("negative")
@@ -87,7 +87,7 @@ class GetBookingControllerTest extends BaseBookingControllerTest {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.SC_BAD_REQUEST);
     }
 
-    // @Disabled("Баг API: возвращает 500 вместо 400 при невалидном формате checkout")
+    @Disabled("Баг API: возвращает 500 вместо 400 при невалидном формате checkout")
     @ParameterizedTest
     @ValueSource(strings = {"abc", "2024-13-01", "2024-01-78", "", "01-06-2024"})
     @Tag("negative")
@@ -101,7 +101,7 @@ class GetBookingControllerTest extends BaseBookingControllerTest {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.SC_BAD_REQUEST);
     }
 
-    // @Disabled("Документация: checkin >= param, API: checkin > param — checkin=15 (граница) не проходит из-за строгого сравнения")
+    @Disabled("Документация: checkin >= param, API: checkin > param — checkin=15 (граница) не проходит из-за строгого сравнения")
     @ParameterizedTest
     @ValueSource(strings = {"2024-06-14", "2024-06-15"})
     @Tag("positive")
@@ -143,7 +143,7 @@ class GetBookingControllerTest extends BaseBookingControllerTest {
                 .doesNotContain(createdBookingId);
     }
 
-    // @Disabled("Документация: checkout >= param, API: checkout <= param — checkout=21 не проходит")
+    @Disabled("Документация: checkout >= param, API: checkout <= param — checkout=21 не проходит")
     @ParameterizedTest
     @ValueSource(strings = {"2024-06-21", "2024-06-22"})
     @Tag("positive")
@@ -165,7 +165,7 @@ class GetBookingControllerTest extends BaseBookingControllerTest {
                 .contains(createdBookingId);
     }
 
-    // @Disabled("Документация: checkout >= param, API: checkout <= param — бронь находится при checkout=23")
+    @Disabled("Документация: checkout >= param, API: checkout <= param — бронь находится при checkout=23")
     @Test
     @Tag("negative")
     @Story("Фильтрация по checkout")

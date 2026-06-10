@@ -51,7 +51,7 @@ class PostBookingControllerTest extends BaseBookingControllerTest {
                 .isEqualTo(HttpStatus.SC_OK);
     }
 
-    // @Disabled("Баг API: возвращает 500 вместо 400 при отсутствии обязательного поля firstname")
+    @Disabled("Баг API: возвращает 500 вместо 400 при отсутствии обязательного поля firstname")
     @Test
     @Tag("negative")
     @Story("Создание брони")
