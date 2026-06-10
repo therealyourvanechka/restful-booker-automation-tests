@@ -14,6 +14,7 @@ import io.restassured.config.RestAssuredConfig;
 import org.junit.jupiter.api.BeforeAll;
 
 public abstract class BaseTest {
+    private static boolean frameworkReady = false;
     protected static String token;
     protected static BookingClient bookingClient;
     protected static BookingClient authBookingClient;
@@ -23,6 +24,9 @@ public abstract class BaseTest {
 
     @BeforeAll
     static void setUpFramework() {
+        if (frameworkReady) return;
+        frameworkReady = true;
+
         RestAssured.config = RestAssuredConfig.config()
                 .objectMapperConfig(new ObjectMapperConfig()
                         .jackson2ObjectMapperFactory((cls, charset) -> new ObjectMapper()
