@@ -201,10 +201,10 @@ AUTH_PASSWORD=password \
 
 ### Allure-отчёт
 
-Отчёт генерируется автоматически после запуска тестов:
+После запуска тестов сгенерируйте отчёт:
 
 ```bash
-./gradlew test
+./gradlew test allureReport
 ```
 
 HTML-отчёт сохраняется в папку `build/allureReport/`. Откройте `build/allureReport/index.html` в браузере:
